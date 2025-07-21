@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>India News - Real-Time Headlines</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>📰 Stay Informed with Real-Time Indian News</h1>
+      <p>Welcome to India News — your gateway to trusted, fast, and relevant news updates across the country. Explore breaking news, politics, and live updates in one place.</p>
+      <button class="cta-button" onclick="document.querySelector('header').scrollIntoView({ behavior: 'smooth' })">
+        Start Reading News
+      </button>
+    </div>
+  </section>
+  
+  <header class="sticky-header">
+    <h1 class="logo">📰 India News</h1>
+    <div class="top-controls">
+      <select id="newsTypeSelect">
+        <option value="breaking">📰 Breaking News</option>
+        <option value="live">📡 Live Updates</option>
+        <option value="politics">🏛️ Politics</option>
+        <option value="frontpage">📅 Date-Based Headlines</option>
+      </select>
+      
+      <div class="region-switch">
+        <label for="newsRegion">Region:</label>
+        <select id="newsRegion">
+          <option value="in" selected>🇮🇳 India</option>
+          <option value="">🌍 World</option>
+        </select>
+      </div>
+      
+      <input type="date" id="frontPageDate"/>
+      <div class="pagination">
+        <button id="prevPage">⏮️</button>
+        <span id="pageNumber">1</span>
+        <button id="nextPage">⏭️</button>
+      </div>
+    </div>
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider round"></span>
+      </label>
+      <span style="font-size: 0.9rem;">🌙 Dark Mode</span>
+    </div>
+    
+  </header>
+
+  <section class="todays-news-section" id="todaysNews">
+    <h2>🗞️ Today's Highlights</h2>
+    <button onclick="loadTodaysHighlights()" class="refresh-btn">🔁 Refresh News</button>
+    
+    
+      <div id="loadingSpinner" class="spinner hidden">
+        <div class="loader"></div>
+      </div>
+  </section>
+  
+  <main id="newsContainer" class="news-grid fade-in"></main>
+  <section class="features-section">
+    <h2>Why Choose India News?</h2>
+    <ul class="features-list">
+      <li>⚡ Fast and Real-Time Updates</li>
+      <li>📌 Categorized Headlines (Politics, Live, Front Page)</li>
+      <li>📱 Mobile-Friendly & Smooth UI</li>
+      <li>🌙 Dark Mode for Comfort</li>
+      <li>🔁 Pagination and Filtering</li>
+    </ul>
+  </section>
+ 
+  
+  <footer class="footer">
+    <p>© 2025 India News. Powered by World News API.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="loadingSpinner" style="display:none; text-align:center; padding:2rem;">
+    <img src="https://i.gifer.com/ZZ5H.gif" width="60" alt="Loading..."/>
+  </div>
+  <button id="backToTop" title="Go to top">⬆️</button>
+
+</body>
+</html>
