@@ -27,5 +27,4 @@ Live Bharat Times is a real-time, category-based news website powered by NewsAPI
 3. Add your NewsAPI key in `script.js`
 4. Connect your Firebase project
 
-## 📂 Folder Structure
 
